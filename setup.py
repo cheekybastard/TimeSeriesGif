@@ -7,7 +7,7 @@ setup(
   author = 'Andrew Han',
   author_email = '',
   url = 'https://github.com/handrew/TimeSeriesGif', 
-  download_url = '', 
+  download_url = 'https://github.com/handrew/TimeSeriesGif/archive/0.1.tar.gz', 
   keywords = ['time series', 'pandas', 'visualization'], 
   classifiers = [],
   install_requires=[
