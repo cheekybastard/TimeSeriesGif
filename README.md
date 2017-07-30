@@ -38,7 +38,7 @@ from TimeSeriesGif import time_series_to_gif
 df = web.DataReader("CPIAUCSL", "fred", start="1900-01-01", end="2017-07-07")
 ```
 
-You like transformations? Get some annual percent changes maybe.
+Transformations? No problem. Get some annual percent changes maybe.
 
 ```
 df = df["CPIAUCSL"].pct_change(12).to_frame("inflation")
@@ -49,16 +49,16 @@ Now all you gotta do is:
 
 ```
 time_series_to_gif(df, 24, 3, 
-				   'line', 'test.gif', 
-				   gif_duration=1,
-				   ylim=(0.005, 0.05))
+		   'line', 'test.gif', 
+		   gif_duration=1,
+		   ylim=(0.005, 0.05))
 
 ```
 
 In order, the arguments mean that you are:
 
 * Taking a 24 month window
-* Increments by 3 months at a time
+* Incrementing by 3 months at a time
 * Making a line plot
 * Naming your file 'test.gif' because you aren't a creative person
 * Creating a 1 second lag between each frame
