@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'TimeSeriesGif',
   packages = ['TimeSeriesGif'],
-  version = '0.1',
+  version = '0.2',
   description = 'Create gifs from pandas time series.',
   author = 'Andrew Han',
   author_email = 'handrew11@gmail.com',
