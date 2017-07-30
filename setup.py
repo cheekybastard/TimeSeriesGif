@@ -7,7 +7,7 @@ setup(
   author = 'Andrew Han',
   author_email = 'handrew11@gmail.com',
   url = 'https://github.com/handrew/TimeSeriesGif', 
-  download_url = 'https://github.com/handrew/TimeSeriesGif/archive/0.1.tar.gz', 
+  download_url = 'https://github.com/handrew/TimeSeriesGif/archive/0.2.tar.gz', 
   keywords = ['time series', 'pandas', 'visualization'], 
   install_requires=['numpy', 'pandas', 'matplotlib', 'imageio'],
   classifiers = []
