@@ -2,3 +2,4 @@ dist/
 MANIFEST
 */*.pyc
 note_to_self
+*/.DS_Store
