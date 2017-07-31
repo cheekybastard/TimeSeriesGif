@@ -4,6 +4,10 @@ Got a pandas time series dataframe? Want to create gifs out of it? Maybe you're 
 
 ![Alt Text](inflation.gif)
 
+# Installation
+
+`pip install TimeSeriesGif` 
+
 # Usage 
 
 Import the package like such:
