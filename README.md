@@ -2,6 +2,8 @@
 
 Got a pandas time series dataframe? Want to create gifs out of it? Maybe you're trying to get a better sense of your time series through different slices of time? Cool.
 
+![Alt Text](inflation.gif)
+
 # Usage 
 
 Import the package like such:
