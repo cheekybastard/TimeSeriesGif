@@ -21,10 +21,11 @@ def image_arr_to_gif(out_file, image_arr, duration=1):
 
 
 def time_series_to_gif(pandas_df, 
-						window, 
-						step, 
-						plot_type, 
-						out_file,
+						out_file, 
+						window=24, 
+						step=3, 
+						plot_type='line', 
+						use_index_as_title=False,
 						gif_duration = 0.5,
 						**kwargs):
 	image_arr = []
@@ -32,7 +33,14 @@ def time_series_to_gif(pandas_df,
 	for row in range(window, len(pandas_df) + window, step):
 
 		curr_df = pandas_df[ row - window : row]
-		fig = curr_df.plot(kind=plot_type, **kwargs).get_figure()
+
+		if use_index_as_title:
+			last_val_of_index = curr_df.index[-1]
+			fig = curr_df.plot(kind=plot_type, title=last_val_of_index, **kwargs).get_figure()
+		else:
+			fig = curr_df.plot(kind=plot_type, **kwargs).get_figure()
+
+
 		img_mat = matplotlib_figure_to_array(fig)
 		image_arr.append(img_mat)
 		
@@ -46,8 +54,8 @@ if __name__ == '__main__':
 	df = web.DataReader("CPIAUCSL", "fred", start="1900-01-01", end="2017-07-07")
 	df = df['CPIAUCSL'].pct_change(12).to_frame('inflation')
 	df = df[df.index >= "1995-01-01"]
-	time_series_to_gif(df, 24, 3, 
-					   'line', 'test.gif', 
-					   gif_duration=1,
+	time_series_to_gif(df, 'test.gif', window=24, step=3, 
+					   plot_type='line', gif_duration=1,
+					   use_index_as_title=True,
 					   ylim=(0.005, 0.05))
 	
